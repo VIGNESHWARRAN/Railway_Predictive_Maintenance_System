@@ -1,0 +1,14 @@
+[0m[[0m[31merror[0m] [0m[0m/home/vignesh/railway-failure-platform/spark-ml/src/main/scala/railway/RailwayAnomalyDetector.scala:59:28: overloaded method value drop with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (minNonNulls: Int,cols: Seq[String])org.apache.spark.sql.DataFrame <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (minNonNulls: Int,cols: Array[String])org.apache.spark.sql.DataFrame <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (minNonNulls: Int)org.apache.spark.sql.DataFrame <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (how: String,cols: Seq[String])org.apache.spark.sql.DataFrame <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (how: String,cols: Array[String])org.apache.spark.sql.DataFrame <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (cols: Seq[String])org.apache.spark.sql.DataFrame <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (cols: Array[String])org.apache.spark.sql.DataFrame <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (how: String)org.apache.spark.sql.DataFrame <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  ()org.apache.spark.sql.DataFrame[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (subset: Seq[String])[0m
+[0m[[0m[31merror[0m] [0m[0m    val cleanDf = rawDf.na.drop(subset = FEATURE_COLS.toSeq)[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
