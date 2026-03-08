@@ -75,7 +75,7 @@ services:
     environment:
       AIRFLOW__CORE__EXECUTOR: SequentialExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
-      AIRFLOW__CORE__FERNET_KEY: 2hVb9g6F7h2vH1cG3l8nQpF4xB6mS5yT8uR9wA0bC1D=
+      AIRFLOW__CORE__FERNET_KEY: "Use Your key"
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
     volumes:
       - ../airflow/dags:/opt/airflow/dags
