@@ -1,0 +1,66 @@
+
+==============================================================
+  RAILWAY ANOMALY DETECTOR — EVALUATION REPORT
+  Split: TEST SET (20%)
+==============================================================
+
+[1] DATASET OVERVIEW
+    Total records    : 39,999
+    Normal records   : 39,777 (99.44%%)
+    Anomaly records  : 222 (0.56%%)
+    Threshold        : 5.0229
+
+[2] ANOMALY SCORE DISTRIBUTION
+    Mean   : 1.2486
+    Std    : 1.3671
+    Min    : 0.0930
+    Max    : 63.9168
+    p50    : 0.9651
+    p90    : 2.2704
+    p95    : 3.0012
+    p99    : 4.3494
+
+[3] CLASS SEPARATION
+    Normal class mean  : 1.1972
+    Anomaly class mean : 10.4686
+    Gap (anomaly-normal): 9.2714  GOOD
+
+[4] CLUSTER QUALITY
+    Cluster%-10s Size%12s Mean Dist%12s Std Dist%12s
+    --------------------------------------------------
+    0                 8,869       0.8454       0.4022
+    1                 6,739       1.4837       1.3695
+    2                 1,103       2.0774       0.9972
+    3                10,025       0.7709       0.4184
+    4                 1,215       3.0099       5.3486
+    5                 4,376       1.9003       1.0829
+    6                 2,684       1.8369       0.9505
+    7                 4,988       1.1079       0.8993
+
+    Weighted WCSS proxy : 49944.69  (lower = tighter clusters)
+
+[5] FAULT LABEL BREAKDOWN (anomalies only)
+    LOW_COMPRESSOR_PRESSURE                    208  (93.7%%)
+    GENERAL_ANOMALY                             10  (4.5%%)
+    VALVE_PRESSURE_DROP                          4  (1.8%%)
+
+[6] SENSOR THRESHOLD BREACHES
+    TP2 < 8.0 bar          : 37,898
+    Motor_current > 25A    : 0
+    Oil_temperature > 90C  : 0
+    DV_pressure < 0.5 bar  : 39,961
+
+[7] AUTOMATED QUALITY CHECKS
+    [WARN] Anomaly rate 0.56%% < 1%% — threshold may be too strict
+    [PASS] Strong class separation between normal and anomaly scores
+
+[8] DATA SPLIT USED
+    70%% TRAIN  -> KMeans + threshold (no data leakage)
+    20%% TEST   -> held-out evaluation (this report)
+    10%% DEMO   -> written to MongoDB for live dashboard
+
+[9] TO FORCE RETRAIN
+    docker exec -it spark-master rm -rf /opt/railway-model
+    Then re-run spark-submit.
+
+==============================================================

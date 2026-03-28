@@ -33,6 +33,14 @@ services:
     volumes:
       - mongo_data:/data/db
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      railway-net:
+        ipv4_address: 172.20.0.4
+  networks:
+    railway-net:
+      ipam:
+        config:
+          - subnet: 172.20.0.0/16
 
   spark-master:
     image: apache/spark:3.5.1
